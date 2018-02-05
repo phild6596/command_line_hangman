@@ -1,0 +1,23 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "node modules",
+  "main": "./command_line_hangman",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phild6596/command_line_hangman.git"
+  },
+  "author": "Phil D.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phild6596/command_line_hangman/issues"
+  },
+  "homepage": "https://github.com/phild6596/command_line_hangman#readme",
+  "dependencies": {
+    "prompt": "^1.0.0",
+    "requirer": "0.0.4"
+  }
+}
