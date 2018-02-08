@@ -2,7 +2,7 @@
   "name": "package.json",
   "version": "1.0.0",
   "description": "node modules",
-  "main": "./command_line_hangman",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/phild6596/command_line_hangman#readme",
   "dependencies": {
-    "prompt": "^1.0.0",
-    "requirer": "0.0.4"
+    "inquirer": "^5.1.0",
+    "prompt": "^1.0.0"
   }
 }

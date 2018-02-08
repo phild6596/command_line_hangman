@@ -1,4 +1,4 @@
-var Letter = function (letters){
+const Letter = function (letters){
     this.letter = letters;
     this.appear = false;
 

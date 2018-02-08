@@ -1,5 +1,11 @@
+var inquirer = require("inquirer");
+var Letter = require('./letter.js');
+console.log(Letter);
 
-const gameWords = function ChosenWords() {
+const WordArray = [];
+
+
+const GameWords = function ChosenWords() {
     const wordList = [
         'Luke Skywalker',
         'Darth Vader',
@@ -13,9 +19,14 @@ const gameWords = function ChosenWords() {
     ];
     const randNum = Math.floor(Math.random() * wordList.length);
     gameWord = wordList[randNum];
+    WordArray.push(gameWord);
 }
-gameWords();
-console.log(gameWord);
-module.exports = {gameWords: gameWords};
+GameWords();
+console.log(WordArray);
+
+module.exports = {
+    GameWords: GameWords,
+    WordArray: WordArray
+};
 //console.log(wordList);
 
