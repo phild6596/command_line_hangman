@@ -1,5 +1,5 @@
 
-function ChosenWords() {
+const gameWords = function ChosenWords() {
     const wordList = [
         'Luke Skywalker',
         'Darth Vader',
@@ -13,10 +13,9 @@ function ChosenWords() {
     ];
     const randNum = Math.floor(Math.random() * wordList.length);
     gameWord = wordList[randNum];
-    console.log(gameWord);
 }
-ChosenWords();
-console.log('line 29: ' + gameWord);
-
+gameWords();
+console.log(gameWord);
+module.exports = {gameWords: gameWords};
 //console.log(wordList);
 
