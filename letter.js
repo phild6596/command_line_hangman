@@ -1,16 +1,20 @@
-const Letter = function (letters){
-    this.letter = letters;
+const Letter = function (letter) {
+    this.letter = letter;
     this.appear = false;
 
-    this.letterRender = function() {
-        if(this.letter === ''){
-            this.appear = true;
-            return ' ';
-        }if (this.appear ===false) {
-            return '_';
-        }else {
+    this.toString = function () {
+        if (this.appear) {
             return this.letter;
+        } else {
+            return '_';
         }
     }
+    this.letterCheck = function (letterGuessed) {
+        if (letterGuessed == this.letter) {
+            this.appear = true;
+        }
+    }
+    console.log(this.letter);
 }
+var testing = new Letter('b');
 module.exports = Letter;
