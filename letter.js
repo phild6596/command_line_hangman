@@ -11,7 +11,9 @@ const Letter = function (letter) {
     this.letterCheck = function (guess) {
         if (this.letter === guess) {
             this.appear = true;
+            return true;
         }
+        return false;
     };
     console.log(this.letter);
 };

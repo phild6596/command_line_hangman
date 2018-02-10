@@ -9,14 +9,16 @@ var Word = function (word) {
             var letterObj = new Letter(char);
             this.wordHolder.push(letterObj);
         }
-        console.log('line 10 :' + this.wordHolder);
+        // console.log('line 10 :' + this.wordHolder);
         //console.log('Line 11: ' + letterObj);
-    }; 
+    };
+
+    this.addLetters();
 
     this.displayWord = function (guess) {
         var result = '';
         for (i = 0; i < this.wordHolder.length; i++){
-            this.wordHolder[i].wordCheck(guess);
+            this.wordHolder[i].letterCheck(guess);
             result += this.wordHolder[i].wordCheck();
             //console.log('What is this:' + result);
         } 
