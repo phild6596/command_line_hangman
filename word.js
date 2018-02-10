@@ -1,28 +1,37 @@
 var Letter = require('./letter.js');
 // Look up how to define class functions in Node, and in general read up about objects/classes 
-const Word = function (word) {
+var Word = function (word) {
     this.wordHolder = [];
+
     this.addLetters = function () {
-        for (i = 0; i < word.length; i++)
-            var character = word[i];
-        var letterObj = new Letter(character);
-        this.wordHolder.push(letterObj);
+        for (i = 0; i < word.length; i++){
+            var char = word[i];
+            var letterObj = new Letter(char);
+            this.wordHolder.push(letterObj);
+        }
+        //console.log('line 10 :' + char);
+        //console.log('Line 11: ' + letterObj);
+    };
+
+    this.displayWord = function (guess) {
+        var result = '';
+        for (i = 0; i < this.wordHolder.length; i++){
+            this.wordHolder[i].letterCheck(guess);
+            result += this.wordHolder[i].wordCheck();
+            //console.log('What is this:' + result);
+        } 
+        console.log(result);
     }
-    this.addLetters();
-    this.displayWord = function () {
-        // this is where you're storing all your stuff
-        var result = "";
-        for (i = 0; i < this.wordHolder.length; i++)
-            // you need to add all these letters to your storage
-            this.wordHolder[i].toString();
-            result += i
-            return this.wordHolder;
-        // then return your storage at the end
-    }
-    console.log('This is the word: ' + this.wordHolder);
 }
 
-
+var phil = new Word('phil');
+//var sam  = new Word('l');
+phil.addLetters(); 
+phil.displayWord('p');
+phil.displayWord('l');
+//sam.addLetters();
+//var testTwo = new Word('ant');
+//var testThree = new Word('turtle');
 // Copy and paste work, or start typing.
 //"" + "h" = "h"
 //"h" + "e" + "l" = "hel"

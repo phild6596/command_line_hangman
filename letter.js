@@ -1,20 +1,23 @@
 const Letter = function (letter) {
     this.letter = letter;
     this.appear = false;
-
-    this.toString = function () {
-        if (this.appear) {
+    this.wordCheck = function () {
+        if (this.appear === true) {
             return this.letter;
         } else {
             return '_';
         }
-    }
-    this.letterCheck = function (letterGuessed) {
-        if (letterGuessed == this.letter) {
+    };
+    this.letterCheck = function (guess) {
+        if (this.letter === guess) {
             this.appear = true;
         }
-    }
+    };
     console.log(this.letter);
-}
-var testing = new Letter('b');
+};
+//var testOne = new Letter('d');
+//var testTwo = new Letter('o');
+//var testThree = new Letter ('g');
+//testOne.letterCheck('d');
 module.exports = Letter;
+
