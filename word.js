@@ -9,26 +9,26 @@ var Word = function (word) {
             var letterObj = new Letter(char);
             this.wordHolder.push(letterObj);
         }
-        //console.log('line 10 :' + char);
+        console.log('line 10 :' + this.wordHolder);
         //console.log('Line 11: ' + letterObj);
-    };
+    }; 
 
     this.displayWord = function (guess) {
         var result = '';
         for (i = 0; i < this.wordHolder.length; i++){
-            this.wordHolder[i].letterCheck(guess);
+            this.wordHolder[i].wordCheck(guess);
             result += this.wordHolder[i].wordCheck();
             //console.log('What is this:' + result);
         } 
         console.log(result);
     }
 }
-
-var phil = new Word('phil');
+module.exports = Word;
+//var phil = new Word('phil');
 //var sam  = new Word('l');
-phil.addLetters(); 
-phil.displayWord('p');
-phil.displayWord('l');
+//phil.addLetters(); 
+//phil.displayWord('p');
+//phil.displayWord('l');
 //sam.addLetters();
 //var testTwo = new Word('ant');
 //var testThree = new Word('turtle');
