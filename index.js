@@ -4,15 +4,15 @@ var inquirer = require('inquirer');
 var listWord;
 var guesses = 5;
 var wordList = [
-    'Luke Skywalker',
-    'Darth Vader',
-    'Death Star',
-    'Princess Leia',
-    'Chewbacca',
-    'Jedi',
-    'Sith',
-    'Lightsaber',
-    'Force',
+    'luke skywalker',
+    'darth vader',
+    'death star',
+    'princess leia',
+    'chewbacca',
+    'jedi',
+    'sith',
+    'lightsaber',
+    'force',
 ];
 
 function chosenWords() {
@@ -44,30 +44,31 @@ function gameFlow() {
          console.log('Guess a letter');
          inquirer.prompt([{
              name: 'guess',
-             message: 'guess',
+             message: 'Guess a letter',
     }]).then(function (answer) {
         console.log(`Guess a letter: ${answer.guess}`);
         var correct = false;
-        for (var i = 0; i < listWord.wordHolder.length; i++) {
-            if (listWord.wordHolder[i].letterCheck(answer.guess)) {
-                correct = true;
-            } else {
-                // decrement lives
-            }
-            
-
-        }
-        
-        listWord.displayWord();
-
-        if (listWord.displayWord().includes('_')) {
+        listWord.guessWord(answer.guess);
+        if (listWord.displayWord().includes(answer.guess)){
+            console.log('Correct guess');
+            gameFlow();
+        } else if (listWord.displayWord().includes('_')) {
+            gameFlow();
+        }else if (!listWord.displayWord().includes(answer.guess)) {
+            guesses--;
+            console.log('Incorrect guess');
             gameFlow();
         }
-
+        //conditional statement for win 
+        //else if (word chosen === all letters picked){
+        //console.log('You Win!');
+        //letsPlay();
+       // }
     })
-    }
+    }else {console.log('You lose');}
 }
 
  letsPlay();
+
 
 

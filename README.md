@@ -1,2 +1,4 @@
 # command_line_hangman
-Using Node to create a hangman app in the terminal
+Using Node and Javascript to create a hangman app in the terminal
+
+

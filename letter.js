@@ -17,9 +17,6 @@ const Letter = function (letter) {
     };
     console.log(this.letter);
 };
-//var testOne = new Letter('d');
-//var testTwo = new Letter('o');
-//var testThree = new Letter ('g');
-//testOne.letterCheck('d');
+
 module.exports = Letter;
 
